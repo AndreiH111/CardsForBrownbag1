@@ -1,0 +1,15 @@
+{
+  "_version": "3.2.0",
+  "identification": {
+    "id": "ns.cp_userslist_static.sm",
+    "title": "Users List Card",
+    "entityType": "role"
+  },
+  "payload": {
+    "apps": [
+      {
+        "id": "ns.users_list_card.app"
+      }
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "cards_static_userList_display": {
+      "type": "role",
+      "src": {
+        "from": "./src",
+        "content": "role.json"
+          }
+        },
+  "users-card": {
+      "type": "card",
+      "src": {
+        "from": "./listcard/src",
+        "path": "./",
+        "build": "",
+        "package": "",
+        "manifest": "src/manifest.json"
+        }
+      }
+}
