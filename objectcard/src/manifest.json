@@ -1,0 +1,102 @@
+{
+  "_version": "1.14.0",
+  "sap.app": {
+    "id": "ns.projects_object_card",
+    "type": "card",
+    "title": "Project Details",
+    "subTitle": "From OData V4 Service",
+    "applicationVersion": {
+      "version": "1.0.0"
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "deviceTypes": {
+      "desktop": true,
+      "phone": true,
+      "tablet": true
+    }
+  },
+  "sap.card": {
+    "type": "Object",
+
+    "data": {
+      "request": {
+        "url": "{{destinations.key}}/odata/v4/catalog/Projects"
+      },
+      "path": "/value/0"
+    },
+
+    "header": {
+      "title": "{ProjectID} – {Name}",
+      "subTitle": "{ProjectDescription}",
+      "icon": {
+        "src": "{Icon}"
+      },
+      "status": {
+        "text": "{Status}"
+      }
+    },
+
+    "content": {
+      "groups": [
+        {
+          "title": "Project Information",
+          "items": [
+            {
+              "label": "Project ID",
+              "value": "{ProjectID}"
+            },
+            {
+              "label": "Description",
+              "value": "{ProjectDescription}"
+            },
+            {
+              "label": "Status",
+              "value": "{Status}"
+            }
+          ]
+        },
+        {
+          "title": "Employee Assigned",
+          "items": [
+            {
+              "label": "Name",
+              "value": "{Name}"
+            },
+            {
+              "label": "Job Title",
+              "value": "{JobTitle}"
+            },
+            {
+              "label": "Responsibilities",
+              "value": "{JobResponsibilities}"
+            },
+            {
+              "label": "Hire Date",
+              "value": "{HireDate}"
+            }
+          ]
+        },
+        {
+          "title": "Employee Photo",
+          "items": [
+            {
+              "label": "Photo",
+              "value": "{Photo}",
+              "type": "image"
+            }
+          ]
+        }
+      ]
+    },
+
+    "configuration": {
+      "destinations": {
+        "key": {
+          "name": "Data_for_Cards"
+        }
+      }
+    }
+  }
+}
