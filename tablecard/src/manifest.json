@@ -1,0 +1,68 @@
+{
+	"_version": "1.15.0",
+	"sap.app": {
+		"id": "ns.TableTypeCard",
+		"type": "card",
+		"title": "Table Card Brownbag",
+		"subTitle": "",
+		"applicationVersion": {
+			"version": "1.0.0"
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+        "deviceTypes": {"desktop": true, "phone": true, "tablet": true},
+		"icons": {
+			"icon": "sap-icon://table-view"
+		}
+	},
+	"sap.card": {
+		"type": "Table",
+        "designtime": "dt/configuration",
+		"data": {
+			"request": {
+				"url": "{{destinations.key}}/odata/v4/catalog/Projects"
+			},
+			"path": "/value"
+		},
+		"header": {
+			"title": "Project Table",
+			"subTitle": "with important details",
+			"status": {
+				"text": "{Status}"
+			}
+		},
+		"content": {
+			"row": {
+				"columns": [{
+						"title": "Project ID",
+						"value": "{ProjectID}",
+						"identifier": true
+					},
+					{
+						"title": "Project Description",
+						"value": "{ProjectDescription}"
+					},
+					{
+						"title": "Status",
+						"value": "{Status}"
+					},
+					{
+						"title": "Assigned to",
+						"value": "{Name}"
+					}
+				]
+			}
+		},
+		"configuration": {
+			"destinations": {
+				"key": {
+					"name": "Data_for_Cards"
+				}
+			}
+		}
+	},
+    "sap.platform.mobilecards": {
+        "compatible": false
+    }
+}

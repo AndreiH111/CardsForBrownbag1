@@ -24,7 +24,7 @@
       "request": {
         "url": "{{destinations.key}}/odata/v4/catalog/Projects"
       },
-      "path": "/value/0"
+      "path": "/value/1"
     },
 
     "header": {

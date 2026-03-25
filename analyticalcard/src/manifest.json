@@ -1,0 +1,122 @@
+{
+	"_version": "1.14.0",
+	"sap.app": {
+		"id": "ns.AnalyticalTypeCard",
+		"type": "card",
+		"title": "Analytical Card Brownbag",
+		"subTitle": "",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"shortTitle": "Weekly Performance",
+        "info": "Data from CAP OData Service",
+        "description": "Line chart showing weekly revenue and cost",
+        "tags": {
+            "keywords": ["Analytical", "Card", "Line", "Weekly"]
+        }
+
+	},
+	"sap.ui": {
+		"technology": "UI5",
+        "deviceTypes": {"desktop": true, "phone": true, "tablet": true},
+		"icons": {
+			"icon": "sap-icon://line-chart"
+		}
+	},
+	"sap.card": {
+		"type": "Analytical",
+        "header": {
+            "type": "Numeric",
+            "title": "Weekly Revenue",
+            "subtitle": "Current Week",
+            "unitOfMeasurement": "EUR",     
+            "data": {
+                "request": {
+                    "url": "{{destinations.key}}/odata/v4/catalog/WeeklyPerformance"
+                },
+                "path": "/value/0"  
+            },
+            "mainIndicator": {
+                "number": "{Revenue}",
+                "unit": "EUR",
+                "trend": "Up",
+                "state": "Good"
+            },
+            "sideIndicators": [
+                {
+                    "title": "Target",
+                    "number": "{Target}",
+                    "unit": "EUR"
+                },
+                {
+                    "title": "Budget",
+                    "number": "{Budget}",
+                    "unit": "EUR"
+                }
+            ]
+        },
+        "content": {
+            "chartType": "Line",
+            "chartProperties": {
+                "title": {
+                "text": "Revenue vs Cost",
+                "visible": true,
+                "alignment": "left"
+                },
+                "legend": {
+                "visible": true
+                },
+                "plotArea": {
+                "dataLabel": {
+                    "visible": true
+                }
+            }
+        },
+        "data": {
+            "request": {
+                "url": "{{destinations.key}}/odata/v4/catalog/WeeklyPerformance"
+            },
+            "path": "/value"
+        },
+        "dimensions": [
+            {
+              "name": "Week",
+              "value": "{Week}"
+            }
+        ],
+        "measures": [
+            {
+              "name": "Revenue",
+              "value": "{Revenue}"
+            },
+            {
+              "name": "Cost",
+              "value": "{Cost}"
+            }
+        ],
+        "feeds": [
+            {
+              "uid": "valueAxis",
+              "type": "Measure",
+              "values": ["Revenue", "Cost"]
+            },
+            {
+              "uid": "categoryAxis",
+              "type": "Dimension",
+              "values": ["Week"]
+            }
+        ]
+    },
+        "configuration": {
+            "destinations": {
+                "key": {
+                    "name": "Data_for_Cards"
+                }
+            }
+        },
+        "designtime": "sap/ui/integration/designtime/cardEditor/ConfigurationTemplate"
+    },
+    "sap.platform.mobilecards": {
+        "compatible": false
+    }
+}

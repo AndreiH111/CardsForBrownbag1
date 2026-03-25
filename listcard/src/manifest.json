@@ -1,80 +1,139 @@
-
 {
-  "_version": "1.14.0",
-  "sap.app": {
-    "id": "ns.users_list_card",
-    "type": "card",
-    "title": "Users by Category Card",
-    "subTitle": "UI5 Integration Card of Type List",
-    "applicationVersion": {
-      "version": "1.0.0"
-    }
-  },
-  "sap.ui": {
-    "technology": "UI5",
-    "deviceTypes": {
-      "desktop": true,
-      "phone": true,
-      "tablet": true
-    },
-    "icons": {
-      "icon": "sap-icon://list"
-    }
-  },
-  "sap.card": {
-    "type": "List",
-    "header": {
-      "title": "List Card with Users",
-      "icon": {
-        "src": "sap-icon://account"
-      },
-      "status": {
-        "text": "10 of 20"
-      }
-    },
-    "content": {
-      "data": {
-        "path": "/users"
-      },
-      "item": {
-        "title": "{name}",
-        "description": "{email}",
-        "highlight": "Success",
-        "info": {
-          "value": "{role}"
+    "sap.app": {
+        "id": "ns.users_list_card",
+        "type": "card",
+        "title": "Users by Category Card",
+        "applicationVersion": {
+            "version": "1.0.0"
         }
-      },
-      "maxItems": 10
     },
-    "data": {
-      "json": {
-        "users": [
-          { "name": "Alice Santos", "email": "alice.santos@example.com", "role": "Admin" },
-          { "name": "Ben Cruz", "email": "ben.cruz@example.com", "role": "Editor" },
-          { "name": "Carla Reyes", "email": "carla.reyes@example.com", "role": "Viewer" },
-          { "name": "Diego Lim", "email": "diego.lim@example.com", "role": "Viewer" },
-          { "name": "Ella Tan", "email": "ella.tan@example.com", "role": "Moderator" },
-          { "name": "Felix Uy", "email": "felix.uy@example.com", "role": "Viewer" },
-          { "name": "Gina Lu", "email": "gina.lu@example.com", "role": "Editor" },
-          { "name": "Hiro Kim", "email": "hiro.kim@example.com", "role": "Viewer" },
-          { "name": "Ivy Chua", "email": "ivy.chua@example.com", "role": "Admin" },
-          { "name": "Jomar Dela Cruz", "email": "jomar.dc@example.com", "role": "Viewer" },
-          { "name": "Kat Lim", "email": "kat.lim@example.com", "role": "Editor" },
-          { "name": "Leo Go", "email": "leo.go@example.com", "role": "Viewer" },
-          { "name": "Maya Ong", "email": "maya.ong@example.com", "role": "Moderator" },
-          { "name": "Nico Valdez", "email": "nico.valdez@example.com", "role": "Viewer" },
-          { "name": "Olive Yu", "email": "olive.yu@example.com", "role": "Viewer" },
-          { "name": "Pia Ramos", "email": "pia.ramos@example.com", "role": "Editor" },
-          { "name": "Quin Santos", "email": "quin.santos@example.com", "role": "Viewer" },
-          { "name": "Rica Dizon", "email": "rica.dizon@example.com", "role": "Viewer" },
-          { "name": "Sam Navarro", "email": "sam.navarro@example.com", "role": "Admin" },
-          { "name": "Tina Co", "email": "tina.co@example.com", "role": "Viewer" }
-        ]
-      },
-      "path": "/"
+    "sap.card": {
+        "type": "List",
+        "header": {
+            "title": "List Card with Users",
+            "icon": {
+                "src": "sap-icon://account"
+            }
+        },
+        "content": {
+            "data": {
+                "path": "/users"
+            },
+            "item": {
+                "title": "{name}",
+                "description": "{email}",
+                "info": {
+                    "value": "{role}"
+                }
+            },
+            "maxItems": 10
+        },
+        "data": {
+            "json": {
+                "users": [
+                    {
+                        "name": "Alice Santos",
+                        "email": "alice.santos@example.com",
+                        "role": "Admin"
+                    },
+                    {
+                        "name": "Ben Cruz",
+                        "email": "ben.cruz@example.com",
+                        "role": "Editor"
+                    },
+                    {
+                        "name": "Carla Reyes",
+                        "email": "carla.reyes@example.com",
+                        "role": "Viewer"
+                    },
+                    {
+                        "name": "Diego Lim",
+                        "email": "diego.lim@example.com",
+                        "role": "Viewer"
+                    },
+                    {
+                        "name": "Ella Tan",
+                        "email": "ella.tan@example.com",
+                        "role": "Moderator"
+                    },
+                    {
+                        "name": "Felix Uy",
+                        "email": "felix.uy@example.com",
+                        "role": "Viewer"
+                    },
+                    {
+                        "name": "Gina Lu",
+                        "email": "gina.lu@example.com",
+                        "role": "Editor"
+                    },
+                    {
+                        "name": "Hiro Kim",
+                        "email": "hiro.kim@example.com",
+                        "role": "Viewer"
+                    },
+                    {
+                        "name": "Ivy Chua",
+                        "email": "ivy.chua@example.com",
+                        "role": "Admin"
+                    },
+                    {
+                        "name": "Jomar Dela Cruz",
+                        "email": "jomar.dc@example.com",
+                        "role": "Viewer"
+                    },
+                    {
+                        "name": "Kat Lim",
+                        "email": "kat.lim@example.com",
+                        "role": "Editor"
+                    },
+                    {
+                        "name": "Leo Go",
+                        "email": "leo.go@example.com",
+                        "role": "Viewer"
+                    },
+                    {
+                        "name": "Maya Ong",
+                        "email": "maya.ong@example.com",
+                        "role": "Moderator"
+                    },
+                    {
+                        "name": "Nico Valdez",
+                        "email": "nico.valdez@example.com",
+                        "role": "Viewer"
+                    },
+                    {
+                        "name": "Olive Yu",
+                        "email": "olive.yu@example.com",
+                        "role": "Viewer"
+                    },
+                    {
+                        "name": "Pia Ramos",
+                        "email": "pia.ramos@example.com",
+                        "role": "Editor"
+                    },
+                    {
+                        "name": "Quin Santos",
+                        "email": "quin.santos@example.com",
+                        "role": "Viewer"
+                    },
+                    {
+                        "name": "Rica Dizon",
+                        "email": "rica.dizon@example.com",
+                        "role": "Viewer"
+                    },
+                    {
+                        "name": "Sam Navarro",
+                        "email": "sam.navarro@example.com",
+                        "role": "Admin"
+                    },
+                    {
+                        "name": "Tina Co",
+                        "email": "tina.co@example.com",
+                        "role": "Viewer"
+                    }
+                ]
+            }
+        },
+        "designtime": "sap/ui/integration/designtime/cardEditor/ConfigurationTemplate"
     }
-  },
-  "sap.platform.mobilecards": {
-    "compatible": false
-  }
 }
